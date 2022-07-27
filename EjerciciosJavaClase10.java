@@ -17,7 +17,9 @@ public class EjerciciosJavaClase10 {
      */
     public static void main(String[] args) {
         
-        serieCuadrada();
+        //serieCuadrada();
+        
+        tableroAjedrez();
         
     }
     
@@ -45,6 +47,9 @@ public class EjerciciosJavaClase10 {
             num = sc.nextInt();
         }
         
+        // Cierre de Scanner
+        sc.close();
+        
         System.out.println("Serie de numeros hasta el '" + num + "': ");
         
         for(int i = 1; i<=num; i++){
@@ -66,6 +71,62 @@ public class EjerciciosJavaClase10 {
             }else{  
             System.out.print(pow + ", ");
             }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    public static void tableroAjedrez(){
+        
+        // Declaracion de Scanner
+        Scanner sc = new Scanner (System.in);
+        
+        // Declaracion de variables
+        int num;
+        
+        // Titulo de ejercicio
+        System.out.println("---------------------------");
+        System.out.println("Tablero de ajedrez");
+        System.out.println("---------------------------");
+        
+        // Introduccion del numero para la serie
+        System.out.print("Introduce el numero para el tamano del tablero: ");
+        num = sc.nextInt();
+        
+        // Ciclo para solicitar un numero en caso de que no se ingrese
+        while(num <= 0){
+            System.out.print("Por favor introduce un numero entero positivo: ");
+            num = sc.nextInt();
+        }
+        
+        // Cierre de Scanner
+        sc.close();
+        
+        //Ciclo for para el tablero
+        for(int i = 1; i <= num; i++){
+            if(i%2 == 0){
+                //Ciclo para cada linea par del tablero
+                for(int j = 1; j <= num; j++){
+                    if(j%2 == 0){
+                        System.out.print("|#|");
+                    }else{
+                        System.out.print("|_|");
+                    } 
+                }
+            } else{
+                //Ciclo para cada linea impar del tablero
+                for(int j = 1; j <= num; j++){
+                    if(j%2 == 0){
+                        System.out.print("|_|");
+                    }else{
+                        System.out.print("|#|");
+                    }
+                }
+            }
+            System.out.println("");
         }
         
     }
